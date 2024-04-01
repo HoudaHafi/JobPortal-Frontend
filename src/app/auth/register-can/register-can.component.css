@@ -1,0 +1,5 @@
+.register-input{
+    @apply block w-full px-3 
+    py-3 mr-2 font-medium border border-[#e0e0e0] rounded-md text-[#6B7280] outline-none 
+    focus:border-[#6A64F1];
+}

@@ -1,0 +1,80 @@
+<app-navbar></app-navbar>
+<div class="max-w-screen-2xl container mx-auto xl:px-24 px-4">
+    <div class="bg-[#FAFAFA] py-10 px-4 lg:px-16">
+        <form class="space-y-5">
+            <div class="create-job-flex">
+                <div class="lg:w-1/2 w-full">
+                    <label class="block mb-2 text-lg">Job Title</label>
+                    <input type="text" placeholder="Web Developer" class="create-job-input"/>
+                </div>
+                <div class="lg:w-1/2 w-full">
+                    <label class="block mb-2 text-lg">Job Location</label>
+                    <input type="text" placeholder="Tunis" class="create-job-input"/>
+                </div>
+            </div>
+            <div class="create-job-flex">
+                <div class="lg:w-1/2 w-full">
+                    <label class="block mb-2 text-lg">Experience Level</label>
+                    <select class="create-job-input">
+                        <option value="">Choose your experience</option>
+                        <option value="Any Experience">Any Experience</option>
+                        <option value="Internship">Internship</option>
+                        <option value="Work remotely">Work remotely</option>
+                    </select>
+                </div>
+                <div class="lg:w-1/2 w-full">
+                    <label class="block mb-2 text-lg">Skills</label>
+                    <input type="text" placeholder="skills" class="create-job-input"/>
+                </div>
+            </div>
+            <div class="create-job-flex">
+                <div class="lg:w-1/2 w-full">
+                    <label class="block mb-2 text-lg">Contract Type</label>
+                    <select class="create-job-input">
+                        <option value="">Choose your contract</option>
+                        <option value="CDI">CDI</option>
+                        <option value="CIVP">CIVP</option>
+                        <option value="CDD">CDD</option>
+                        <option value="FREELANCE">FREELANCE</option>
+                    </select>
+                </div>
+                <div class="lg:w-1/2 w-full">
+                    <label class="block mb-2 text-lg">Employment Type</label>
+                    <select class="create-job-input">
+                        <option value="">Choose your employment type</option>
+                        <option value="Remote">Remote</option>
+                        <option value="Hybrid">Hybrid</option>
+                        <option value="On-Site">On-Site</option>
+                    </select>
+                </div>
+            </div>
+            <div class="create-job-flex">
+                <div class="lg:w-1/2 w-full">
+                    <label class="block mb-2 text-lg">Job Posting Date</label>
+                    <input type="date" placeholder="2023-12-28" class="create-job-input"/>
+                </div>
+                <div class="lg:w-1/2 w-full">
+                    <label class="block mb-2 text-lg">Application Deadline</label>
+                    <input type="date" placeholder="2024-03-28" class="create-job-input"/>
+                </div>
+            </div>
+            <div>
+                <label class="block mb-2 text-lg">Required Skill Sets:</label>
+                <ng-select [items]="requirements" bindLabel="name" bindValue="id"
+                class="create-job-input py-4" (change)="itemSelected($event)" [multiple]="true" 
+                [closeOnSelect]="false"></ng-select>
+            </div>
+            <div class="w-full">
+                <label class="block mb-2 text-lg">Job Description</label>
+                <textarea class="w-full pl-3 py-1.5 focus:outline-none placeholder:text-gray-700"
+                rows="6" placeholder="Job Description"></textarea>
+            </div>
+            <div class="w-full">
+                <label class="block mb-2 text-lg">Benefits</label>
+                <input type="text" placeholder="benefits" class="create-job-input"/>
+            </div>
+            <input type="submit" value="Submit" class="block mt-12 bg-blue text-white font-semibold px-8 py-2 rounded-sm
+            cursor-pointer"/>
+        </form>
+    </div>
+</div>
