@@ -1,0 +1,93 @@
+<app-navbar></app-navbar>
+<div class="max-w-screen-2xl container mx-auto xl:px-24 px-4">
+    <div class="bg-[#FAFAFA] py-10 px-4 lg:px-16">
+        <h1 class="text-3xl font-semibold mb-4">Update Job</h1>
+        <form class="space-y-5" (ngSubmit)="onSubmit()">
+            <div class="create-job-flex">
+                <div class="lg:w-1/2 w-full">
+                    <label class="block mb-2 text-lg">Job Title</label>
+                    <input type="text" placeholder="Web Developer" class="create-job-input" [(ngModel)]="job.title" name="title" required/>
+                </div>
+                <div class="lg:w-1/2 w-full">
+                    <label class="block mb-2 text-lg">Job Location</label>
+                    <input type="text" placeholder="Tunis" class="create-job-input" [(ngModel)]="job.location" name="location" required/>
+                </div>
+            </div>
+            <div class="create-job-flex">
+                <div class="lg:w-1/2 w-full">
+                    <label class="block mb-2 text-lg">Degree</label>
+                    <select class="create-job-input" [(ngModel)]="job.niveau" name="niveau" required>
+                        <option value="">Choose your Degree</option>
+                        <option value="licence">licence</option>
+                        <option value="master">master</option>
+                        <option value="ingénieur">ingénieur</option>
+                        
+                    </select>
+                </div>
+                <div class="lg:w-1/2 w-full">
+                    <label class="block mb-2 text-lg">Skills</label>
+                    <input type="text" placeholder="skills" class="create-job-input" [(ngModel)]="job.skills" name="skills" required/>
+                </div>
+            </div>
+            <div class="create-job-flex">
+                <div class="lg:w-1/2 w-full">
+                    <label class="block mb-2 text-lg">Contract Type</label>
+                    <select class="create-job-input" [(ngModel)]="job.contrat" name="contrat" required>
+                        <option value="">Choose your contract</option>
+                        <option value="CDI">CDI</option>
+                        <option value="CIVP">CIVP</option>
+                        <option value="CDD">CDD</option>
+                        <option value="FREELANCE">FREELANCE</option>
+                    </select>
+                </div>
+                <div class="lg:w-1/2 w-full">
+                    <label class="block mb-2 text-lg">Employment Type</label>
+                    <select class="create-job-input" [(ngModel)]="job.type" name="type" required>
+                        <option value="">Choose your employment type</option>
+                        <option value="REMOTE">REMOTE</option>
+                        <option value="HYBRID">HYBRID</option>
+                        <option value="ONSITE">ONSITE</option>
+                    </select>
+                </div>
+            </div>
+            <div class="create-job-flex">
+                <div class="lg:w-1/2 w-full">
+                    <label class="block mb-2 text-lg">Job Posting Date</label>
+                    <input type="date" placeholder="2023-12-28" class="create-job-input" [(ngModel)]="job.datepub" name="datepub" required/>
+                </div>
+                <div class="lg:w-1/2 w-full">
+                    <label class="block mb-2 text-lg">Application Deadline</label>
+                    <input type="date" placeholder="2024-03-28" class="create-job-input" [(ngModel)]="job.deadline" name="deadline" required/>
+                </div>
+            </div>
+            <!--<div>
+                <label class="block mb-2 text-lg">Required Skill Sets:</label>
+                <ng-select [items]="requirements" bindLabel="name" bindValue="id"
+                class="create-job-input py-4" (change)="itemSelected($event)" [multiple]="true" 
+                [closeOnSelect]="false" [(ngModel)]="job.requirements" name="requirements"></ng-select>
+            </div>-->
+            <div class="w-full">
+                <label class="block mb-2 text-lg">Required Skill Sets:</label>
+                <input type="text" placeholder="requirements" class="create-job-input" [(ngModel)]="job.requirements" name="requirements" required/>
+            </div>
+            <div class="w-full">
+                <label class="block mb-2 text-lg">Job Description</label>
+                <textarea class="w-full pl-3 py-1.5 focus:outline-none placeholder:text-gray-700"
+                rows="6" placeholder="Job Description" [(ngModel)]="job.description" name="description" required></textarea>
+            </div>
+            <div class="w-full">
+                <label class="block mb-2 text-lg">Benefits</label>
+                <input type="text" placeholder="benefits" class="create-job-input" [(ngModel)]="job.avantages" name="avantages" required/>
+            </div>
+            <!--<div class="create-job-flex">
+                <div class="lg:w-1/2 w-full">
+                  <label class="block mb-2 text-lg">Recruteur ID</label>
+                  <input type="number" placeholder="Recruteur ID" class="create-job-input" [(ngModel)]="recruteur.id" name="recruteurId" />
+                </div>
+            </div>-->
+            <input type="submit" value="Submit" class="block mt-12 bg-blue text-white font-semibold px-8 py-2 rounded-sm
+            cursor-pointer"/>
+        </form>
+    </div>
+</div>
+

@@ -1,0 +1,110 @@
+.job-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #f8f8f8;
+    min-height: 70vh;
+    padding: 20px;
+}
+
+.job-card {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    background-color: white;
+}
+
+.job-details {
+    padding: 20px;
+}
+
+.job-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #108ee9;
+    margin-bottom: 10px;
+}
+
+.job-description {
+    margin-bottom: 10px;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 10px 0;
+}
+
+.job-info {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.info-row {
+    flex: 0 0 50%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.info-label {
+    font-weight: 10px;
+    margin-right: 5px;
+}
+
+.info-value {
+    font-weight: bold;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.update-button {
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete-button {
+    background-color: #cf2d2d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.score-button {
+    background-color: #2ecb48;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.score-button:hover {
+    background-color: #309f30;
+}
+
+.update-button:hover {
+    background-color: #303f9f;
+}
+
+.delete-button:hover{
+    background-color: #e41616; 
+}

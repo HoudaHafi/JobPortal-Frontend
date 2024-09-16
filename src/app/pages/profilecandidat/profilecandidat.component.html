@@ -1,0 +1,67 @@
+<app-navbar></app-navbar>
+
+<div class="min-h-screen flex flex-col bg-white">
+  <div class="container mx-auto py-8 flex flex-grow">
+    <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 px-4 flex-grow">
+      <!-- Profil du candidat -->
+      <div class="col-span-1 sm:col-span-1 flex flex-col">
+        <div class="bg-white shadow-md rounded-lg p-4 border border-gray-300 h-[420px] overflow-hidden">
+          <div class="flex flex-col items-center mb-2">
+            <img [src]="'http://localhost:8080/api/candidat/' + candidat.id + '/avatar'" alt="Company Logo" class="w-36 h-36 bg-gray-200 rounded-full mb-2"/>
+            <h1 class="text-2xl font-bold text-gray-900">{{ candidat?.firstName }} {{ candidat?.lastName }}</h1>
+            <p class="text-gray-600 text-xl">{{ candidat?.niveau }}</p>
+          </div>
+          <hr class="my-4 border-t border-gray-300">
+          <div class="mt-4 flex flex-wrap gap-2 justify-center">
+            <a [routerLink]="['/profile', candidat.id, 'edit']" class="bg-blue hover:bg-indigo-700 text-white py-3 px-7 rounded transition duration-200">Update Profile</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Informations supplémentaires -->
+      <div class="col-span-1 sm:col-span-3 flex flex-col">
+        <div class="bg-white shadow-md rounded-lg border border-gray-300 h-[420px] overflow-hidden">
+          <div class="px-4 py-4 border-b border-gray-200">
+            <h3 class="text-2xl font-medium text-gray-900">About Me</h3>
+            <p class="mt-1 text-xl text-gray-500">Detailed information about the candidate.</p>
+          </div>
+          <div class="flex-grow px-4 py-4 grid grid-cols-2 gap-4">
+            <div>
+              <dl class="divide-y divide-gray-200">
+                <div class="py-2 sm:py-4">
+                  <dt class="text-lg font-medium text-gray-500">Full Name</dt>
+                  <dd class="text-lg text-gray-900">{{ candidat?.firstName }} {{ candidat?.lastName }}</dd>
+                </div>
+                <div class="py-2 sm:py-4">
+                  <dt class="text-lg font-medium text-gray-500">Email Address</dt>
+                  <dd class="text-lg text-gray-900">{{ candidat?.email }}</dd>
+                </div>
+                <div class="py-2 sm:py-4">
+                  <dt class="text-lg font-medium text-gray-500">Phone</dt>
+                  <dd class="text-lg text-gray-900">{{ candidat?.telephone }}</dd>
+                </div>
+              </dl>
+            </div>
+            <div>
+              <dl class="divide-y divide-gray-200">
+                <div class="py-2 sm:py-4">
+                  <dt class="text-lg font-medium text-gray-500">Date of Birth</dt>
+                  <dd class="text-lg text-gray-900">{{ candidat?.dateNaissance }}</dd>
+                </div>
+                <div class="py-2 sm:py-4">
+                  <dt class="text-lg font-medium text-gray-500">Address</dt>
+                  <dd class="text-lg text-gray-900">{{ candidat?.adresse }}</dd>
+                </div>
+                <div class="py-2 sm:py-4">
+                  <dt class="text-lg font-medium text-gray-500">Experience level</dt>
+                  <dd class="text-lg text-gray-900">{{ candidat?.nbexperience }}</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

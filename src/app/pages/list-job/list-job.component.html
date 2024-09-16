@@ -1,0 +1,53 @@
+<app-navbar></app-navbar>
+<div>
+    <h1 class="text-center p-4">List of job</h1>
+    <div class="flex justify-center md:flex-row flex-col md:gap-0 gap-4">
+        <div class="flex md:rounded-s-md rounded shadow-sm ring-1 ring-inset ring-gray-300
+            focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 md:w-1/2 w-full">
+            <input type="text" name="search" id="search" placeholder="Search"
+            class="block flex-1 border-0 bg-transparent py-1.5 pl-8 text-gray-900
+            placeholder:text-gray-400 focus:right-0 sm:text-sm sm:leading-6" />
+            <fa-icon class="absolute mt-2 ml-2 text-gray-400 " [icon]="faSearch"></fa-icon>
+        </div>
+        <button type="submit" class="bg-blue py-2 px-8 text-white md:rounded-s-none rounded">Search</button>
+    </div>
+</div>
+<div class="job-list">
+    <div class="job-card" *ngFor="let job of jobs" (click)="navigateToJobDetails(job.id)" style="cursor: pointer;">
+        
+        <div class="job-details">
+            <h2 class="job-name">{{ job.title }}</h2>
+            <p class="job-description">
+                {{ job.description }}
+            </p>
+            <hr class="divider">
+            <div class="job-info">
+                <div class="info-row">
+                    <span class="info-label">Location:</span>
+                    <span class="info-value">{{ job.location }}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Contract:</span>
+                    <span class="info-value">{{ job.contrat }}</span>
+                </div>
+            </div>
+            <hr class="divider">
+            <div class="job-info">
+                <div class="info-row">
+                    <span class="info-label">Employment Type:</span>
+                    <span class="info-value">{{ job.type }}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Deadline:</span>
+                    <span class="info-value">{{ job.deadline }}</span>
+                </div>
+            </div>
+            <hr class="divider">
+            <div class="actions">
+                <button class="score-button" (click)="navigateToCandidates(job.id)">List of Candidate</button>
+                <button class="update-button" (click)="updateJob(job.id)">Update</button>
+                <button class="delete-button" (click)="confirmDelete(job.id)">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

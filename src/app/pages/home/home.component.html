@@ -1,7 +1,12 @@
 <div>
    <div class="bg-[#FAFAFA] md:grid grid-cols-4 gap-8 lg:px-24 px-4 py-12">
-      <div class="bg-white p-4 rounded"><app-side-bar></app-side-bar></div>
-      <div class="col-span-2 bg-white p-4 rounded-sm"><app-card></app-card></div>
-      <div class="bg-white p-4 rounded"><app-newsletter></app-newsletter></div>
+     <div class="bg-white p-4 rounded">
+       <app-side-bar (filterChanged)="onFilterChanged($event)"></app-side-bar>
+     </div>
+     <div class="col-span-2 bg-white p-4 rounded-sm">
+       <app-card [filters]="filters"[searchResults]="searchResults"></app-card>
+     </div>
+     <div class="bg-white p-4 rounded"><app-newsletter></app-newsletter></div>
    </div>
-</div>
+ </div>
+ 

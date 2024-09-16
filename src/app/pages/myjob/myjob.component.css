@@ -1,0 +1,21 @@
+.status-button {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    display: inline-block;
+  }
+  
+  .status-pending {
+    background-color: green;
+  }
+  
+  .status-accepted {
+    background-color: blue;
+  }
+  
+  .status-rejected {
+    background-color: red;
+  }
+  

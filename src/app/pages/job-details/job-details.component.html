@@ -1,0 +1,102 @@
+<app-navbar></app-navbar>
+<div class="bg-white min-h-screen">
+  <div class="overlay" *ngIf="applyFormVisible"></div>
+  <div class="container mx-auto pt-5">
+    <div class="flex flex-wrap">
+      <div class="w-full lg:w-8/12 px-4">
+        <div class="bg-white shadow rounded-lg mb-4 border border-gray-300">
+          <div class="p-4">
+            <div class="flex justify-between items-center">
+              <div>
+                <h6 class="text-lg font-semibold">{{ job.title }}</h6>
+                <a>{{ job.recruteur.societe }}</a>
+              </div>
+              <div>
+                <img class="h-10 w-10" [src]="'http://localhost:8080/api/job/' + job.recruteur.id + '/logo'" alt="">
+              </div>
+            </div>
+            <div class="flex justify-between text-gray-600 mt-2">
+              <div>
+                <fa-icon [icon]="faLocationDot"></fa-icon> {{ job.location }}
+              </div>
+              <div>
+                <fa-icon [icon]="faClock"></fa-icon> {{ job.type }}
+              </div>
+              <div>
+                <fa-icon [icon]="faCalendar"></fa-icon> {{ job.datepub }}
+              </div>
+            </div>
+            <hr class="my-4 border-gray-300">
+            <div class="flex justify-between items-center">
+              <div>
+                <small>Deadline: {{ job.deadline }}</small>
+              </div>
+              <div class="flex space-x-2">
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+                <button
+  (click)="showApplyForm()"
+  [disabled]="hasApplied"
+  class="border border-blue text-blue rounded-full px-4 py-2 mx-2 hover:bg-blue hover:text-white"
+  type="button">
+  {{hasApplied ? "Already Applied" : "Apply"}}
+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white shadow rounded-lg mb-4 border border-gray-300">
+          <div class="p-4">
+            <h5 class="text-lg font-semibold">Job description:</h5>
+            <div class="mt-2">
+              {{ job.description }}
+            </div>
+          </div>
+          <div class="p-4">
+            <h5 class="text-lg font-semibold">Requirements:</h5>
+            <div class="mt-2">
+              {{ job.requirements }}
+            </div>
+          </div>
+          <div class="p-4">
+            <h5 class="text-lg font-semibold">Skills:</h5>
+            <div class="mt-2">
+              {{ job.skills }}
+            </div>
+          </div>
+          <div class="p-4">
+            <h5 class="text-lg font-semibold">Degree:</h5>
+            <div class="mt-2">
+              {{ job.niveau }}
+            </div>
+          </div>
+          <div class="p-4">
+            <h5 class="text-lg font-semibold">Benefits:</h5>
+            <div class="mt-2">
+              {{ job.avantages }}
+            </div>
+          </div>
+          <div class="p-4">
+            <h5 class="text-lg font-semibold">Contract Type:</h5>
+            <div class="mt-2">
+              {{ job.contrat }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-full lg:w-4/12 px-4">
+        <div class="bg-white shadow rounded-lg mb-4 border border-gray-300">
+          <div class="p-4">
+            <h6 class="text-center text-lg font-semibold">Reviews</h6>
+          </div>
+        </div>
+        <div class="bg-white shadow rounded-lg mb-4 border border-gray-300">
+          <div class="p-4">
+            <h6 class="text-center text-lg font-semibold">Salary Insights</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-application-form *ngIf="applyFormVisible" [candidateData]="candidateData" [jobId]="job.id" (formClosed)="hideApplyForm()"></app-application-form>

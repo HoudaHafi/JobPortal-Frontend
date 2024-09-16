@@ -1,4 +1,3 @@
-<app-navbar></app-navbar>
 <body>
     <section class="min-h-screen flex items-stretch">
         <div class="lg:flex w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center" 
@@ -34,31 +33,31 @@
                   JobPortal
                 </h1>
                 
-                <form action="" class="sm:w-2/3 w-full px-4 lg:px-0 mx-auto">
+                <form (ngSubmit)="login()" #loginForm="ngForm" class="sm:w-2/3 w-full px-4 lg:px-0 mx-auto">
                     <div class="pb-2 pt-4 flex flex-col">
                         <span class="text-sm text-start text-gray-900 mb-2">Hi, Welcome back 👋</span>
                         <h1 class="text-2xl text-start font-bold mb-4">Login to your account</h1>
                     </div>
                     
                     <div class="pb-2 pt-4 flex flex-col">
-                        <label for="username" class="text-lg text-start text-gray-500">UserName</label>
-                        <input type="text" name="username" id="username" placeholder="UserName" class="block w-full px-5 
+                        <label for="username" class="text-lg text-start text-gray-500">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Email" [(ngModel)]="email" class="block w-full px-5 
                         py-4 mr-2 font-medium border border-[#e0e0e0] rounded-2xl text-[#6B7280] outline-none 
                         focus:border-[#6A64F1]">
                     </div>
                     <div class="pb-2 pt-4 flex flex-col">
                         <label for="password" class="text-lg text-start text-gray-500">Password</label>
-                        <input type="password" name="password" id="password" placeholder="Password" class="block 
+                        <input type="password" name="password" id="password" placeholder="Password" [(ngModel)]="password" class="block 
                         w-full px-5 py-4 mr-2 font-medium border border-[#e0e0e0] rounded-2xl text-[#6B7280] 
                         outline-none focus:border-[#6A64F1]" >
                     </div>
                     <div class="text-right text-gray-500 hover:underline hover:text-gray-400">
-                        <a href="/">Forgot your password?</a>
+                        <a routerLink="/forgotpass">Forgot your password?</a>
                     </div>
                     <div class="pb-2 pt-4">
                         <button class="uppercase block w-full p-4 text-lg text-white rounded-2xl bg-indigo-500 
                         hover:bg-indigo-600 focus:outline-none mb-4">sign in</button>
-                        <p class="text-sm leading-relaxed text-grey-900">Not registered yet? <a routerLink="/registerRec" 
+                        <p class="text-sm leading-relaxed text-grey-900">Not registered yet? <a routerLink="/registerCan" 
                             class="font-bold text-indigo-500">Create an Account</a>
                         </p>
                     </div>
@@ -68,3 +67,4 @@
         </div>
     </section>
 </body>
+

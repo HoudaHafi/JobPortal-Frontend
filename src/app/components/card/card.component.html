@@ -1,18 +1,17 @@
-<section class="card">
-    <a href="/" class="flex gap-4 flex-col sm:flex-row items-start">
-          <img src="assets/Linear.png" alt="" />
+<section class="card" *ngFor="let job of jobs">
+    <a [routerLink]="['/jobDetails', job.id]" class="flex gap-4 flex-col sm:flex-row items-start">
+        <img [src]="'http://localhost:8080/api/job/' + job.recruteur.id + '/logo'" alt="Company Logo" />
           <div>
-              <h4 class="text-primary mb-1"> Linear Company</h4>
-              <h3 class="text-lg font-semibold mb-2"> Software Engineer</h3>
+              <h4 class="text-primary mb-1"> {{ job.recruteur.societe }}</h4>
+              <h3 class="text-lg font-semibold mb-2"> {{ job.title }}</h3>
     
              <div class="text-primary/70 text-base flex flex-wrap gap-2 mb-2">
-                 <span class="flex items-center gap-2"><fa-icon [icon]="faLocationDot"></fa-icon> Tunis</span>
-                 <span class="flex items-center gap-2"><fa-icon [icon]="faClock"></fa-icon> Remote</span>
-                 <span class="flex items-center gap-2"><fa-icon [icon]="faDollarSign"></fa-icon> 20-30k</span>
-                 <span class="flex items-center gap-2"><fa-icon [icon]="faCalendar"></fa-icon>2023-11-03</span>
+                 <span class="flex items-center gap-2"><fa-icon [icon]="faLocationDot"></fa-icon> {{ job.location }}</span>
+                 <span class="flex items-center gap-2"><fa-icon [icon]="faClock"></fa-icon> {{ job.type }}</span>
+                 <span class="flex items-center gap-2"><fa-icon [icon]="faCalendar"></fa-icon>{{ job.datepub }}</span>
              </div>
     
-             <p class="text-base text-primary/70">description</p>
+             <p class="text-base text-primary/70">{{ job.description }}</p>
             </div>
     </a>
 </section>

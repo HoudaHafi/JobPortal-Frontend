@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+<div class="bg-white border border-4 rounded-lg shadow relative m-10">
+
+    <div class="flex items-start justify-between p-5 border-b rounded-t">
+        <h3 class="text-xl font-semibold">
+            Edit profile
+        </h3>
+        
+    </div>
+
+    <div class="p-6 space-y-6">
+        <form (ngSubmit)="onSubmit()">
+            <div class="grid grid-cols-6 gap-6">
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="firstName" class="text-sm font-medium text-gray-900 block mb-2">First Name</label>
+                    <input type="text" name="firstName" [(ngModel)]="recruiter.firstName" id="firstName" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="" required="">
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="lastName" class="text-sm font-medium text-gray-900 block mb-2">Last Name</label>
+                    <input type="text" name="lastName" [(ngModel)]="recruiter.lastName" id="lastName" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="" required="">
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="societe" class="text-sm font-medium text-gray-900 block mb-2">Company</label>
+                    <input type="text" name="societe" [(ngModel)]="recruiter.societe" id="societe" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="" required="">
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="poste" class="text-sm font-medium text-gray-900 block mb-2">Job</label>
+                    <input type="text" name="poste" [(ngModel)]="recruiter.poste" id="poste" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="" required="">
+                </div>
+                <div class="col-span-full">
+                    <label for="email" class="text-sm font-medium text-gray-900 block mb-2">Email</label>
+                    <input type="text" name="email" [(ngModel)]="recruiter.email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="" required="">
+                </div>
+                <div class="col-span-4 sm:col-span-2">
+                    <label for="secteur" class="text-sm font-medium text-gray-900 block mb-2">Sector</label>
+                    <input type="text" name="secteur" [(ngModel)]="recruiter.secteur" id="secteur" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="" required="">
+                </div>
+                <div class="col-span-4 sm:col-span-2">
+                    <label for="adrsociete" class="text-sm font-medium text-gray-900 block mb-2">Address</label>
+                    <input type="text" name="adrsociete" [(ngModel)]="recruiter.adrsociete" id="adrsociete" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="" required="">
+                </div>
+                <div class="col-span-4 sm:col-span-2">
+                    <label for="idsociete" class="text-sm font-medium text-gray-900 block mb-2">Identifier</label>
+                    <input type="text" name="idsociete" [(ngModel)]="recruiter.idsociete" id="idsociete" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="" required="">
+                </div>
+            </div>
+            <div class="p-6 border-t border-gray-200 rounded-b">
+                <button class="text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center" type="submit">Update</button>
+            </div>
+        
+        </form>
+    </div>
+
+    
+</div>

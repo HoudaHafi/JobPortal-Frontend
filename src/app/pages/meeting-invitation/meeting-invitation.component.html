@@ -1,0 +1,40 @@
+<div class="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-2/3">
+      <form (ngSubmit)="sendMeetingInvitation()">
+        <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
+          <div class="text-gray-600">
+            <p class="font-medium text-lg">Meeting Invitation</p>
+            <p>Please fill out all the fields.</p>
+          </div>
+
+          <div class="lg:col-span-2">
+            <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
+              <div class="md:col-span-3">
+                <label for="date">Date</label>
+                <input type="date" id="date" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" [(ngModel)]="meeting.date" name="date" required />
+              </div>
+
+              <div class="md:col-span-2">
+                <label for="time">Time</label>
+                <input type="time" id="time" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" [(ngModel)]="meeting.time" name="time" required/>
+              </div>
+
+              <div class="md:col-span-5">
+                <label for="link">Meeting Link</label>
+                <input type="url" id="link" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" [(ngModel)]="meeting.link" name="link" required/>
+              </div>
+
+      
+              <div class="md:col-span-5 text-right">
+                <div class="inline-flex items-end">
+                  <button type="submit" class="bg-blue text-white py-2 px-4 rounded">Send Invitation</button>
+                  <button type="button" class="bg-red-500 text-white rounded p-2 ml-4" (click)="cancelInvitationForm()">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      </div>
+  </div>
+  

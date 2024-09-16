@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Job } from '../models/job';
 
 @Component({
   selector: 'app-default-layout',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class DefaultLayoutComponent {
 
+  searchResults: Job[] = [];
+
+  onJobSearch(jobs: Job[]) {
+    console.log('onJobSearch called', jobs)
+    this.searchResults = jobs;
+  }
 }

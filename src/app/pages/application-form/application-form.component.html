@@ -1,0 +1,76 @@
+<div class="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-2/3">
+      <form [formGroup]="applicationForm" (ngSubmit)="submitApplication()">
+        <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
+          <div class="text-gray-600">
+            <p class="font-medium text-lg">Application Form</p>
+            <p>Please fill out all the fields.</p>
+          </div>
+
+          <div class="lg:col-span-2">
+            <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
+              <div class="md:col-span-3">
+                <label for="first_name">First Name</label>
+                <input type="text" formControlName="firstName" id="first_name" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" placeholder="firstName" />
+              </div>
+
+              <div class="md:col-span-2">
+                <label for="last_name">Last Name</label>
+                <input type="text" formControlName="lastName" id="last_name" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" placeholder="lastName" />
+              </div>
+
+              <div class="md:col-span-5">
+                <label for="email">Email Address</label>
+                <input type="text" formControlName="email" id="email" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" placeholder="email@domain.com" />
+              </div>
+
+              <div class="md:col-span-3">
+                <label for="address">Address / Street</label>
+                <input type="text" formControlName="adresse" id="address" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" placeholder="address" />
+              </div>
+
+              <div class="md:col-span-2">
+                <label for="city">phone</label>
+                <input type="text" formControlName="telephone" id="phone" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" placeholder="phone" />
+              </div>
+
+              <div class="md:col-span-2">
+                <label for="country">Date of Birth</label>
+                <div class="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
+                  <input type="date" formControlName="dateNaissance" id="date of Birth" placeholder="date of Birth" class="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent" value="" />
+                </div>
+              </div>
+
+              <div class="md:col-span-2">
+                <label for="degree">Degree</label>
+                <div class="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
+                  <input formControlName="niveau" id="degree" placeholder="degree" class="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent" value="" />
+                </div>
+              </div>
+
+              <div class="md:col-span-1">
+                <label for="experience level">Experience level</label>
+                <input type="text" formControlName="nbexperience" id="experience level" class="transition-all flex items-center h-10 border mt-1 rounded px-4 w-full bg-gray-50" placeholder="level" value="" />
+              </div>
+
+              <div class="md:col-span-5">
+                <label for="cv">CV</label>
+                <input type="file" id="cv" name="cv" (change)="onFileChange($event)" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.gif,.tiff" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50 form-control" />
+
+              </div>
+
+      
+              <div class="md:col-span-5 text-right">
+                <div class="inline-flex items-end">
+                  <button type="submit" class="bg-blue text-white py-2 px-4 rounded" >Submit</button>
+                  <button type="button" class="bg-red-500 text-white rounded p-2 ml-4" (click)="cancelApplyForm()">Cancel</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </form>
+      </div>
+  </div>
+  
